@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
@@ -9,6 +9,7 @@ import Home from "Routes/Home";
 import TV from "Routes/TV";
 import Search from "Routes/Search";
 import Header from "Components/Header";
+import Detail from "Routes/Detail";
 
 export default () => (
   <Router>
@@ -16,8 +17,10 @@ export default () => (
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/tv" component={TV} />
+        <Route path="/tv" component={TV} />
         <Route path="/search" component={Search} />
+        <Route path="/movie/:id" component={Detail} />
+        <Route path="/show/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
     </>
