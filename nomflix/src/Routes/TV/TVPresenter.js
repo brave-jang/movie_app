@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
 import Message from "../../Components/Message";
+import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 0px 10px;
@@ -17,21 +18,42 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
       {topRated && topRated.length > 0 && (
         <Section title="상영 중인 컨텐츠">
           {topRated.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title="상영 예정 컨텐츠">
           {popular.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {airingToday && airingToday.length > 0 && (
         <Section title="인기 있는 컨텐츠">
           {airingToday.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
