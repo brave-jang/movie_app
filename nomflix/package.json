@@ -31,7 +31,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://brave-jang.github.io/nomflix",
+  "homepage": "https://hungry-volhard-3ba30b.netlify.app",
   "browserslist": {
     "production": [
       ">0.2%",
